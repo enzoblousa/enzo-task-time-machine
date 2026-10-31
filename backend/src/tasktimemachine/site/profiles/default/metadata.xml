@@ -3,5 +3,7 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-plone.volto:default</dependency>
+    <dependency>profile-collective.volto.formsupport:default</dependency>
+    <dependency>profile-kitconcept.voltolighttheme:default</dependency>
   </dependencies>
 </metadata>
