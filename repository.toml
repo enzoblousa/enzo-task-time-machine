@@ -1,0 +1,34 @@
+[repository]
+name = "enzo-task-time-machine"
+changelog = "CHANGELOG.md"
+version = "version.txt"
+version_format = "calver"
+container_images_prefix = "ghcr.io/enzoblousa/enzo-task-time-machine"
+compose = ["docker-compose.yml"]
+
+[repository.towncrier]
+section = "Project"
+settings = "towncrier.toml"
+
+[backend.package]
+name = "tasktimemachine.site"
+path = "backend"
+code_path = "src/tasktimemachine/site"
+changelog = "backend/CHANGELOG.md"
+towncrier_settings = "backend/pyproject.toml"
+base_package = "Products.CMFPlone"
+publish = false
+
+[frontend.package]
+name = "volto-tasktimemachine-site"
+path = "frontend/packages/volto-tasktimemachine-site"
+code_path = "src"
+changelog = "frontend/packages/volto-tasktimemachine-site/CHANGELOG.md"
+towncrier_settings = "frontend/packages/volto-tasktimemachine-site/towncrier.toml"
+base_package = "@plone/volto"
+publish = false
+
+[cookieplone]
+template = "project"
+template_version = "feb3bcfa31af22df9e913a46e994d7c19d9fa5da"
+generated_date = "2026-10-31 19:00:48"

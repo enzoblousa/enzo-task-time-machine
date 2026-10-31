@@ -1,0 +1,21 @@
+{
+    "title": "Task Time Machine",
+    "description": "Esse projeto servir\u00e1 como uma m\u00e1quina do tempo para todos terema acessos \u00e0 todas minhas tasks profissionais desenvolvidas ao longo da minha carreira",
+    "project_slug": "enzo-task-time-machine",
+    "hostname": "tasktimemachine.com.br",
+    "author": "EnzoSpindola-BR",
+    "email": "enzoblousa@gmail.com",
+    "python_package_name": "tasktimemachine.site",
+    "use_prerelease_versions": false,
+    "plone_version": "6.2.2",
+    "feature_headless": true,
+    "language_code": "pt-br",
+    "github_organization": "enzoblousa",
+    "container_registry": "github",
+    "devops_storage": "relstorage",
+    "devops_cache": false,
+    "devops_ansible": false,
+    "devops_gha_deploy": false,
+    "initialize_documentation": false,
+    "__template__": "project"
+}
