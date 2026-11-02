@@ -2,4 +2,10 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission
+        id="tasktimemachine.site.AddTodoTask"
+        title="tasktimemachine.site: Add TodoTask"
+    />
+
+
 </configure>

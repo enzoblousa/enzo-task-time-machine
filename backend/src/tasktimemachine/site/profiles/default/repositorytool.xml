@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <repositorytool>
   <policymap>
 
-  </policymap>
+  <type name="Todo Task"><policy name="at_edit_autoversion"/><policy name="version_on_revert"/></type></policymap>
 </repositorytool>
