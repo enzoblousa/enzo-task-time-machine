@@ -3,8 +3,8 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
-        id="tasktimemachine.site.AddTodoTask"
-        title="tasktimemachine.site: Add TodoTask"
+        id="tasktimemachine.site.AddTask"
+        title="tasktimemachine.site: Add Task"
     />
 
 

@@ -5,5 +5,5 @@
           name="MyType"
   />
 -->
-  <object name="Todo Task" meta_type="Dexterity FTI"/>
+  <object name="Task" meta_type="Dexterity FTI"/>
 </object>

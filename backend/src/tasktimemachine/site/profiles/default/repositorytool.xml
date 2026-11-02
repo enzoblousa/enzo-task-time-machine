@@ -2,5 +2,5 @@
 <repositorytool>
   <policymap>
 
-  <type name="Todo Task"><policy name="at_edit_autoversion"/><policy name="version_on_revert"/></type></policymap>
+  <type name="Task"><policy name="at_edit_autoversion"/><policy name="version_on_revert"/></type></policymap>
 </repositorytool>

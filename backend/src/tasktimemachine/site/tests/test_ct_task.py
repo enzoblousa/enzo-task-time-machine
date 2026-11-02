@@ -1,5 +1,5 @@
 
-from tasktimemachine.site.content.todo_task import ITodoTask  # noqa: E501
+from tasktimemachine.site.content.task import ITask  # noqa: E501
 from tasktimemachine.site.testing import INTEGRATION_TESTING  # noqa
 from plone import api
 from plone.app.testing import setRoles
@@ -13,7 +13,7 @@ import unittest
 
 
 
-class TodoTaskIntegrationTest(unittest.TestCase):
+class TaskIntegrationTest(unittest.TestCase):
 
     layer = INTEGRATION_TESTING
 
@@ -23,62 +23,62 @@ class TodoTaskIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.parent = self.portal
 
-    def test_ct_todo_task_schema(self):
-        fti = queryUtility(IDexterityFTI, name='Todo Task')
+    def test_ct_task_schema(self):
+        fti = queryUtility(IDexterityFTI, name='Task')
         schema = fti.lookupSchema()
-        self.assertEqual(ITodoTask, schema)
+        self.assertEqual(ITask, schema)
 
-    def test_ct_todo_task_fti(self):
-        fti = queryUtility(IDexterityFTI, name='Todo Task')
+    def test_ct_task_fti(self):
+        fti = queryUtility(IDexterityFTI, name='Task')
         self.assertTrue(fti)
 
-    def test_ct_todo_task_factory(self):
-        fti = queryUtility(IDexterityFTI, name='Todo Task')
+    def test_ct_task_factory(self):
+        fti = queryUtility(IDexterityFTI, name='Task')
         factory = fti.factory
         obj = createObject(factory)
 
         self.assertTrue(
-            ITodoTask.providedBy(obj),
-            f'ITodoTask not provided by {obj}!',
+            ITask.providedBy(obj),
+            f'ITask not provided by {obj}!',
         )
 
-    def test_ct_todo_task_adding(self):
+    def test_ct_task_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
         obj = api.content.create(
             container=self.portal,
-            type='Todo Task',
-            id='todo_task',
+            type='Task',
+            id='task',
         )
 
         self.assertTrue(
-            ITodoTask.providedBy(obj),
-            f'ITodoTask not provided by {obj.id}!',
+            ITask.providedBy(obj),
+            f'ITask not provided by {obj.id}!',
         )
 
         parent = obj.__parent__
-        self.assertIn('todo_task', parent.objectIds())
+        self.assertIn('task', parent.objectIds())
 
         # check that deleting the object works too
         api.content.delete(obj=obj)
-        self.assertNotIn('todo_task', parent.objectIds())
+        self.assertNotIn('task', parent.objectIds())
 
-    def test_ct_todo_task_globally_addable(self):
+    def test_ct_task_globally_addable(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
-        fti = queryUtility(IDexterityFTI, name='Todo Task')
+        fti = queryUtility(IDexterityFTI, name='Task')
         self.assertTrue(
             fti.global_allow,
             f'{fti.id} is not globally addable!'
         )
 
-    def test_ct_todo_task_filter_content_type_false(self):
+    def test_ct_task_filter_content_type_false(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
-        fti = queryUtility(IDexterityFTI, name='Todo Task')
+        fti = queryUtility(IDexterityFTI, name='Task')
         portal_types = self.portal.portal_types
         parent_id = portal_types.constructContent(
             fti.id,
             self.portal,
-            'todo_task_id',
-            title='Todo Task container',
+            'task_id',
+            title='Task container',
         )
         self.parent = self.portal[parent_id]
         obj = api.content.create(

@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Todo Task"
+    name="Task"
     meta_type="Dexterity FTI"
     i18n:domain="tasktimemachine.site">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Todo Task</property>
+      name="title">Task</property>
   <property
       i18n:translate=""
       name="description">Documente sua task</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Todo Task</property>
+  <property name="factory">Task</property>
   <property name="icon_expr">string:tools</property>
   <property name="link_target"></property>
 
@@ -27,11 +27,11 @@
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">tasktimemachine.site.AddTodoTask</property>
-  <property name="klass">tasktimemachine.site.content.todo_task.TodoTask</property>
+  <property name="add_permission">tasktimemachine.site.AddTask</property>
+  <property name="klass">tasktimemachine.site.content.task.Task</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">tasktimemachine.site.content.todo_task.ITodoTask</property>
+  <property name="schema">tasktimemachine.site.content.task.ITask</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -50,7 +50,8 @@
     <element value="plone.textindexer" />
     <element value="plone.relateditems"/>
     <element value="plone.versioning" />
-    <!--<element value="plone.leadimage"/>-->
+    <element value="plone.leadimage"/>
+    <element value="volto.blocks"/>
     <!--<element value="plone.richtext"/>-->
     <!--<element value="plone.tableofcontents"/>-->
     <!--<element value="plone.translatable" />-->
@@ -61,7 +62,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Todo Task</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Task</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>

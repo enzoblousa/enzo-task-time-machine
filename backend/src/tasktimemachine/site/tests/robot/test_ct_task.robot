@@ -4,7 +4,7 @@
 #
 # Run this robot test stand-alone:
 #
-#  $ bin/test -s tasktimemachine.site -t test_todo_task.robot --all
+#  $ bin/test -s tasktimemachine.site -t test_task.robot --all
 #
 # Run this robot test with robot server (which is faster):
 #
@@ -14,7 +14,7 @@
 #
 # 2) Run robot tests:
 #
-# $ bin/robot /src/tasktimemachine/site/tests/robot/test_todo_task.robot
+# $ bin/robot /src/tasktimemachine/site/tests/robot/test_task.robot
 #
 # See the http://docs.plone.org for further details (search for robot
 # framework).
@@ -34,18 +34,18 @@ Test Teardown  Close all browsers
 
 *** Test Cases ***************************************************************
 
-Scenario: As a site administrator I can add a Todo Task
+Scenario: As a site administrator I can add a Task
   Given a logged-in site administrator
-    and an add Todo Task form
-   When I type 'My Todo Task' into the title field
+    and an add Task form
+   When I type 'My Task' into the title field
     and I submit the form
-   Then a Todo Task with the title 'My Todo Task' has been created
+   Then a Task with the title 'My Task' has been created
 
-Scenario: As a site administrator I can view a Todo Task
+Scenario: As a site administrator I can view a Task
   Given a logged-in site administrator
-    and a Todo Task 'My Todo Task'
-   When I go to the Todo Task view
-   Then I can see the Todo Task title 'My Todo Task'
+    and a Task 'My Task'
+   When I go to the Task view
+   Then I can see the Task title 'My Task'
 
 
 *** Keywords *****************************************************************
@@ -55,11 +55,11 @@ Scenario: As a site administrator I can view a Todo Task
 a logged-in site administrator
   Enable autologin as  Site Administrator
 
-an add Todo Task form
-  Go To  ${PLONE_URL}/++add++Todo Task
+an add Task form
+  Go To  ${PLONE_URL}/++add++Task
 
-a Todo Task 'My Todo Task'
-  Create content  type=Todo Task  id=my-todo_task  title=My Todo Task
+a Task 'My Task'
+  Create content  type=Task  id=my-task  title=My Task
 
 # --- WHEN -------------------------------------------------------------------
 
@@ -69,18 +69,18 @@ I type '${title}' into the title field
 I submit the form
   Click Button  Save
 
-I go to the Todo Task view
-  Go To  ${PLONE_URL}/my-todo_task
+I go to the Task view
+  Go To  ${PLONE_URL}/my-task
   Wait until page contains  Site Map
 
 
 # --- THEN -------------------------------------------------------------------
 
-a Todo Task with the title '${title}' has been created
+a Task with the title '${title}' has been created
   Wait until page contains  Site Map
   Page should contain  ${title}
   Page should contain  Item created
 
-I can see the Todo Task title '${title}'
+I can see the Task title '${title}'
   Wait until page contains  Site Map
   Page should contain  ${title}

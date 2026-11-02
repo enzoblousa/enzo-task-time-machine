@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="portal_catalog">
-  <!-- Index
-  <index meta_type="FieldIndex"
-         name="industry"
+  <!-- Task: ordenar e filtrar a listagem -->
+  <index meta_type="DateIndex"
+         name="delivery_date"
   >
-    <indexed_attr value="industry" />
+    <property name="index_naive_time_as_local">True</property>
   </index>
--->
-  <!-- Metadata
-  <column value="industry" />
--->
+  <index meta_type="FieldIndex"
+         name="company"
+  >
+    <indexed_attr value="company" />
+  </index>
+  <index meta_type="KeywordIndex"
+         name="technologies"
+  >
+    <indexed_attr value="technologies" />
+  </index>
+
+  <!-- Task: exibir os metadados nos cards da listagem -->
+  <column value="delivery_date" />
+  <column value="company" />
+  <column value="technologies" />
 </object>

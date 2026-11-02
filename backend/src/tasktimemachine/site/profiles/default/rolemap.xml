@@ -4,7 +4,7 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <permission
-        name="tasktimemachine.site: Add TodoTask"
+        name="tasktimemachine.site: Add Task"
         acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>

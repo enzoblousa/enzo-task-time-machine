@@ -2,5 +2,5 @@
 <object>
   <difftypes>
 
-  <type portal_type="Todo Task"><field name="any" difftype="Compound Diff for Dexterity types"/></type></difftypes>
+  <type portal_type="Task"><field name="any" difftype="Compound Diff for Dexterity types"/></type></difftypes>
 </object>
