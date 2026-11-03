@@ -1,0 +1,48 @@
+.task-view .task-details {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #0059ff;
+  background: #faeee3;
+  border-radius: 4px;
+}
+
+.task-view .task-details dl {
+  display: grid;
+  margin: 0;
+  gap: 1rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.task-view .task-details-item dt {
+  margin-bottom: 0.25rem;
+  color: #5a6672;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.task-view .task-details-item dd {
+  margin: 0;
+}
+
+.task-view .task-details-technologies {
+  grid-column: 1 / -1;
+}
+
+.task-view .task-details-technologies ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.task-view .task-tech {
+  padding: 0.2rem 0.7rem;
+  border: 1px solid #c9d3dc;
+  background: #fff;
+  border-radius: 999px;
+  font-size: 0.875rem;
+}
